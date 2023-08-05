@@ -3,7 +3,6 @@
 import React, { FC } from 'react'
 import Categories from './Categories'
 import RangeFilter from './RangeFilter'
-
 import SelectRating from './SelectRating'
 
 const HomePage:FC =  () => {
@@ -20,7 +19,9 @@ const HomePage:FC =  () => {
           <RangeFilter />
           <SelectRating onRatingChange={handlechange} />
         </div>
-        <div className="col-span-3 bg-black">aaa</div>
+        <div className="col-span-3">
+          
+        </div>
     </div>
   )
 }
