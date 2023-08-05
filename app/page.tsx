@@ -1,10 +1,12 @@
-import UserButtonNaavbar from '@/components/UserButtonNaavbar'
+import Navbar from '@/components/Navbar'
+
 import React, { FC } from 'react'
 
 const page: FC = () => {
   return (
     <div>
-      <UserButtonNaavbar />
+      <Navbar />
+
     </div>
   )
 }

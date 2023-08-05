@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { UserButton } from "@clerk/nextjs";
 
-const UserButtonNaavbar: FC = () => {
+const UserButtonNavbar: FC = () => {
   return (
     <div>
       <UserButton afterSignOutUrl="/" />
@@ -9,4 +9,4 @@ const UserButtonNaavbar: FC = () => {
   );
 };
 
-export default UserButtonNaavbar;
+export default UserButtonNavbar;
