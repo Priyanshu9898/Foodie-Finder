@@ -4,6 +4,7 @@ import React, { FC } from 'react'
 import Categories from './Categories'
 import RangeFilter from './RangeFilter'
 import SelectRating from './SelectRating'
+import GoogleMapView from './GoogleMapView';
 
 const HomePage:FC =  () => {
 
@@ -20,7 +21,7 @@ const HomePage:FC =  () => {
           <SelectRating onRatingChange={handlechange} />
         </div>
         <div className="col-span-3">
-          
+          <GoogleMapView />
         </div>
     </div>
   )
