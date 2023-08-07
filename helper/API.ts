@@ -5,7 +5,7 @@ export const getGooglePlace = async (
   lat: number,
   lng: number
 ) => {
-  const res = await fetch('/api/google-place');
+  const res = await fetch('/api/googlePlace');
 
   const data = await res.json();
 
