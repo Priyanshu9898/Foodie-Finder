@@ -2,6 +2,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
+import { LocationProvider, useLocation } from "@/context/LocationContext";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -17,13 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={raleway.className}>
-          
-          {children}
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
-        </body>
-      </html>
+      <LocationProvider>
+        <html lang="en">
+          <body className={raleway.className}>
+            {children}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+          </body>
+        </html>
+      </LocationProvider>
     </ClerkProvider>
   );
 }
