@@ -1,3 +1,4 @@
+import { useLocation } from "@/context/LocationContext";
 import { LoadScript, GoogleMap } from "@react-google-maps/api";
 import React, { FC } from "react";
 
@@ -12,17 +13,25 @@ const center = {
 };
 
 const GoogleMapView: FC = () => {
+  const { location } = useLocation();
+
+  const center = {
+    lat: location.latitude as number,
+    lng: location.longitude as number,
+  };
+
   return (
     <div>
-      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY as string} mapIds={['8611701adf8e4ed4']}>
+      <LoadScript
+        googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY as string}
+        mapIds={["8611701adf8e4ed4"]}
+      >
         <GoogleMap
-        options={{mapId:'8611701adf8e4ed4'}}
+          options={{ mapId: "8611701adf8e4ed4" }}
           mapContainerStyle={containerStyle}
           center={center}
           zoom={10}
-        >
-
-        </GoogleMap>
+        ></GoogleMap>
       </LoadScript>
     </div>
   );

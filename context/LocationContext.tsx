@@ -41,7 +41,7 @@ export const LocationProvider = ({ children }: { children: ReactNode }) => {
           longitude: position.coords.longitude,
         });
 
-        // console.log(position)
+        console.log(position)
       },
       (error) => {
         console.error(error);
