@@ -1,5 +1,5 @@
 import { useLocation } from "@/context/LocationContext";
-import { LoadScript, GoogleMap } from "@react-google-maps/api";
+import { LoadScript, GoogleMap, MarkerF } from "@react-google-maps/api";
 import React, { FC } from "react";
 
 const containerStyle = {
@@ -31,7 +31,18 @@ const GoogleMapView: FC = () => {
           mapContainerStyle={containerStyle}
           center={center}
           zoom={10}
-        ></GoogleMap>
+        >
+          <MarkerF position={center} icon={{
+            url: "/user-location.png",
+            scaledSize: {
+              width: 50,
+              height: 50,
+              equals: function(size: google.maps.Size) {
+                return this.height === size.height && this.width === size.width;
+              },
+            }
+          }} />
+        </GoogleMap>
       </LoadScript>
     </div>
   );

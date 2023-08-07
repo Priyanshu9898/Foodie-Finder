@@ -2,8 +2,8 @@
 
 import React, { FC, useState } from "react";
 
-const RangeFilter: FC = () => {
-  const [radius, setRadius] = useState(2500);
+const RangeFilter: FC<{radius: number, setRadius: (arg: number) => void }> = ({radius, setRadius}) => {
+  
   return (
     <div>
       <h2 className="font-bold px-2 mt-6">Select Radius (In meters)</h2>

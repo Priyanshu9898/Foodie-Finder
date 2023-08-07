@@ -4,7 +4,9 @@ import { CategoryListData } from "@/constants/CategoryData";
 import Image from "next/image";
 import React, { FC, useState } from "react";
 
-const Categories: FC = () => {
+const Categories: FC<{ setCategory: (arg: string) => void }> = ({
+  setCategory,
+}) => {
   const [selectedFood, setSelectedFood] = useState(0);
   const [categoryData, setCategoryData] = useState(CategoryListData);
 
@@ -25,7 +27,10 @@ const Categories: FC = () => {
                   ? "grayscale-0 border-[1px]"
                   : "grayscale"
               }`}
-              onClick={() => handleCategory(index)}
+              onClick={() => {
+                handleCategory(index);
+                setCategory(item.name);
+              }}
             >
               <Image src={item.icon} alt={item.name} width={40} height={40} />
               {item.name}
