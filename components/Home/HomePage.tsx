@@ -27,10 +27,10 @@ const HomePage: FC = () => {
         location.latitude as number,
         location.longitude as number
       ).then((res) => {
-        console.log("data", res.data.product.results);
-        setBusinessList(res.data.product.results);
-        setBusinessListOrg(res.data.product.results);
-        
+        // console.log("data", res);
+        setBusinessList(res.product);
+        setBusinessListOrg(res.product);
+
       });
 
     }
