@@ -29,7 +29,7 @@ const Categories: FC<{ setCategory: (arg: string) => void }> = ({
               }`}
               onClick={() => {
                 handleCategory(index);
-                setCategory(item.name);
+                setCategory(item.value);
               }}
             >
               <Image src={item.icon} alt={item.name} width={40} height={40} />
